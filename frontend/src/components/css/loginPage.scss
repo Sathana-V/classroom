@@ -1,0 +1,69 @@
+.login {
+    &-page {
+        // background-image: url('./../../assets/images/background.webp');
+        height: 100%;
+        background: whitesmoke;
+        width: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;   
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 10%;
+    }
+    &-container {
+        display: flex;
+        min-height: 350px;
+    }
+    &-image {
+        width: 50%;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &-message-box {
+        background-color: green;
+        color: white;
+        font-size: 15px;
+        padding: 20px;
+        width: 50%;
+        border: 1px solid black;
+        &-error {
+            background-color: #af0e0e;
+        }
+    }
+
+    &-form {
+        width: 50%;
+        padding-top: 20px;
+        align-items: center;
+        &-heading{
+            color: white;
+            text-align: center;
+        }
+        display: block;
+        form {
+            padding: 30px;
+            display: grid;
+            justify-items: center;
+            input, select {
+                margin: 10px;
+            }
+            .error-message {
+                font-size: 14px;
+                font-weight: 400;
+                color: red;
+            }
+            button {
+                margin: 10px;
+                border-radius: 1rem;
+            }
+        }
+        .link {
+            color: white;
+            margin-top: 10px;
+        }
+    }
+}

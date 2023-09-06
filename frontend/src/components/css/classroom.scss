@@ -1,0 +1,88 @@
+.classroom-form {
+    padding: 50px;
+
+    &-description {
+        display: block;
+        float: left;
+        margin: 10px;
+
+    }
+
+    &-details {
+        padding-top: 20px;
+    }
+
+    img {
+        width: 400px;
+        padding: 20px;
+        height: 300px;
+    }
+}
+.classroom-container {
+    width: 80%;
+}
+.classroom-for-students {
+    .form-content {
+        background-color: aliceblue;
+        padding: 20px;
+    }
+
+    img {
+        width: 100%;
+        padding: 20px;
+        height: 100%;
+    }
+}
+
+.classlist-card {
+    img {
+        width: 100px;
+        height: 100px;
+    }
+
+    &-code {
+        background-color: green;
+        width: 100%;
+        padding: 4px 10px;
+        color: white;
+    }
+
+    &-text {
+        text-align: justify;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 5;
+        white-space: pre-wrap;
+    }
+
+    &-count {
+        padding: 1px 10px;
+        background: midnightblue;
+        float: left;
+        margin-right: 13px;
+        border-radius: 10px;
+
+        span {
+            padding-left: 10px;
+            color: white;
+        }
+
+    }
+}
+
+.card-header {
+    background: #0d6efd !important;
+    color: white;
+    padding-top: 10px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    white-space: pre-wrap;
+    h4 {
+        color: white;
+        margin: 0;
+        text-align: left;
+    }
+}
