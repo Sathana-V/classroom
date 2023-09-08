@@ -14,6 +14,7 @@ function NavbarBootstap(props) {
     deleteCookie("userAuth")
     dispatch(userLogout())
     localStorage.removeItem("userDetails")
+    debugger
     navigate("/login")
   }
   return (

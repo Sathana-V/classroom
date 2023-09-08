@@ -70,6 +70,11 @@ router.post("/register", async (req, res) => {
     const user = await UserModel.find()
     res.status(200).json({data: user})
   })
+  router.get("/current/:id", async (req, res) => {
+    console.log('hello', req.params.id);
+    const user = await UserModel.findOne({_id: req.params.id}).populate('class')
+    res.status(200).json({data: user})
+  })
 
   const secretKey = 'secret'; // Replace with your actual secret key
   

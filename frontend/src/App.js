@@ -7,12 +7,13 @@ import NoPage from './components/NoPage';
 import Navbar from './components/Navbar';
 import Products from './components/Products';
 import NewProduct from './components/NewProduct';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import ProtectedRoute from './services/ProtectedRoute';
 import LoginPage from './components/LoginPage';
 import { useDispatch, useSelector } from 'react-redux';
 import { userLogin } from './actions/userLogin';
 import SignupPage from './components/SignupPage';
+import Description from './components/Description';
 import NavbarTemplate from './components/NavbarTemplate';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -20,10 +21,11 @@ const LazyAbout = React.lazy(() => import('./components/About'));
 
 function App() {
   const dispatch = useDispatch()
-  const isAuthenticated = useSelector(state => state.user.userStatus)
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
   useEffect(() => {
     const cookie = getCookie('userAuth')
     console.log('hello', cookie);
+    setIsAuthenticated(cookie)
     if(cookie) {
       dispatch(userLogin(cookie))
     }
@@ -32,7 +34,7 @@ function App() {
     <div className="App">
       {/* <Navbar /> */}
     
-      <ProtectedRoute>
+      <ProtectedRoute isAuthenticated={isAuthenticated}>
       <Routes>
           {/* <Route path="/" element={<React.Suspense fallback={<div>Loading...</div>}>
           <Home />
@@ -45,8 +47,9 @@ function App() {
         <Route path="/login" element={
         <LoginPage />} />
          <Route path="/register" element={
-         <SignupPage />} />
-        
+         <SignupPage />} /> 
+         <Route path="/classroom" element={
+         <Description />} />
         <Route path="*" element={<NoPage />} />
       </Routes>
       </ProtectedRoute>

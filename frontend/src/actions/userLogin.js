@@ -1,4 +1,4 @@
-import { USER_LOGIN, USER_LOGOUT } from "./actionTypes";
+import { USER_LOGIN, USER_LOGOUT, USER_DETAILS} from "./actionTypes";
 
 export const userLogin = (payload) => {
     return {
@@ -12,5 +12,10 @@ export const userLogout = (payload) => {
         payload: payload
     }
 }
-
+export const userDetails = (payload) => {
+    return {
+        type: USER_DETAILS,
+        payload: payload
+    }
+}
 

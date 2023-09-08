@@ -38,7 +38,20 @@ export const getAllUsers = async() => {
       }
    })
 }
-
+export const getCurrentUser = async (id) => {
+   return await axios.get(`http://localhost:3004/auth/current/${id}`).then(response => {
+      console.log(response);
+      return {
+         data: response.data
+      }
+   })
+   .catch(err => {
+      console.log(err);
+      return {
+         data: []
+      }
+   })
+}
 export const createNewClass = async(value) => {
    return await axios.post("http://localhost:3004/class/new", value, {withCredentials: true}).then ((response) => {
       console.log('scuccess', response);

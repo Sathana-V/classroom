@@ -25,6 +25,7 @@ const NavbarTemplate = () => {
     console.log('logout claled');
     deleteCookie("userAuth")
     dispatch(userLogout())
+    debugger
     navigate("/login")
   }
   const {

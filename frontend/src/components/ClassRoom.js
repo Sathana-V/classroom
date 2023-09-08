@@ -130,7 +130,7 @@ const ClassRoom = () => {
         </Card>
       </div>
       <Container className="mt-4">
-        <ClassList loading={state.loading} users={state.users} />
+        <ClassList type="Staff" loading={state.loading} users={state.users} />
       </Container>
     </div>
   );

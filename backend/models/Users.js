@@ -18,9 +18,10 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    class: {
-        type: Array
-    }
+    class: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'class'
+    }]
 })
 
 export const UserModel = mongoose.model("visitors", UserSchema)

@@ -117,7 +117,7 @@ function ClassRoomStudent() {
                 </Card>
             </Container>
             <Container className="mt-4">
-                <ClassList loading={state.loading} users={state.users} />
+                <ClassList  type="Student" loading={state.loading} users={state.users} />
             </Container>
         </>
     );

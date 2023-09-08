@@ -7,11 +7,11 @@ import { classRouter } from "./routes/Class.js";
 const app = express()
 // every api request converrt into json 
 app.use(express.json())
-const corsOptions = {
-    origin: 'http://localhost:3000',
-    credentials: true, // Enable sending cookies with requests
-  };
-  
+const corsOptions ={
+  origin:'http://localhost:3000', 
+  credentials:true,            //access-control-allow-credentials:true
+  optionSuccessStatus:200
+}
 app.use(cors(corsOptions));
   
 app.use("/auth", userRouter)

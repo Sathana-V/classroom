@@ -39,6 +39,7 @@ export default function LoginPage() {
                         type: userDetails.type,
                         _id: userDetails._id
                     }))
+                    debugger
                     dispatch(userLogin(userEmail))
                     navigate("/")
                 }

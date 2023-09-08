@@ -10,6 +10,7 @@ function RedirectIfAuthenticatedRoute(props) {
   if (isUserAuthenticated && (path === '/login' || path === '/register')) {
     return <Navigate to="/" replace />;
   } else if (!isUserAuthenticated && path !== '/login' && path !== '/register') {
+    debugger
     return <Navigate to="/login" replace />;
   }
 
