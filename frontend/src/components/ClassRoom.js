@@ -49,7 +49,7 @@ const ClassRoom = () => {
   const getClass = () => {
     const {_id} = JSON.parse(localStorage.getItem('userDetails') || {})
     getUserClass({_id}).then((response) => {
-      console.log(response);
+      console.log('classRoom respone', response);
       setState((prev) => ({
         ...prev,
         users: response.data.data || [],

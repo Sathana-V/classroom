@@ -4,17 +4,19 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "../components/css/classroom.scss"
 import bookImg from "../assets/images/books.jpeg"
-import { setCurrentClass } from "../actions/classDetails";
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { setCurrentClass, setCurrentPage } from "../actions/classDetails";
+import { useDispatch, useSelector } from "react-redux";
 const ClassList = (props) => {
-    const navigate = useNavigate()
+    const dispatch = useDispatch()
     console.log('userlist', props.users);
     const state = useSelector(state => state);
     console.log('state', state);
     const onSubmitHandler = (e) => {
-        setCurrentClass(e)
-        navigate('/classroom?id='+e._id)
+        console.log(e);
+        dispatch(setCurrentClass(e))
+        dispatch(setCurrentPage('description'))
+        sessionStorage.setItem('description_id', e._id)
+        // navigate('/classroom?id='+e._id)
     }
     return (
         <Row>

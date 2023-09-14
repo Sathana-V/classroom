@@ -1,16 +1,21 @@
 import mongoose from "mongoose";
 
 const TaskSchema = new mongoose.Schema({
-    receivers: {
+    
+    title: {
         type: String,
         required: true
     },
-    tasks: [{
+    description: {
         type: String,
         required: true
-    }],
+    },
     attachment: {
-        type: String,
+        type: [String],
+        required: true
+    },
+    classId: {
+        type: mongoose.Schema.Types.ObjectId,
         required: true
     },
     userId: {

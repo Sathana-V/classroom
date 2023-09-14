@@ -78,7 +78,7 @@ export const getAllClass = async() => {
 }
 export const getUserClass = async(value) => {
    return await axios.get(`http://localhost:3004/class/classList/${value._id}`).then(response => {
-      console.log(response);
+      console.log('get user class -. getUserClass ->>>> ', response);
       return {
          data: response.data
       }

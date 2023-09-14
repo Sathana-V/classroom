@@ -7,10 +7,12 @@ import Calender from './Calender'
 import ClassRoom from './ClassRoom'
 import ClassRoomStudent from './ClassRoomStudent'
 import { setCurrentPage } from '../actions/classDetails'
+import Description from './Description'
 const componentList = {
   classRoom: <ClassRoom />,
   classRoomForStudent: <ClassRoomStudent />,
-  calender: <Calender />
+  calender: <Calender />,
+  description: <Description/>
 }
 class Home extends React.PureComponent {
   state = {
@@ -18,6 +20,9 @@ class Home extends React.PureComponent {
   }
   componentDidMount() {
     this.componentChangeHandler('classRoom')
+  }
+  componentDidUpdate() {
+    console.log('updated', this.props.currentPage);
   }
   componentChangeHandler(value) {
     let userDetails = JSON.parse(localStorage.getItem('userDetails') || {})
@@ -31,10 +36,11 @@ class Home extends React.PureComponent {
     this.props.setCurrentPage(value)
   }
   render() {
-    console.log('currentPage', this.props.currentPage);
+    
     return (
       <div>
         <NavbarBootstrap onComponentChange={(value) => this.componentChangeHandler(value)} />
+
         {componentList[this.props.currentPage] || ''}
 
       </div>

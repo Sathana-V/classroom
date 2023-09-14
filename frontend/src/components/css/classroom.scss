@@ -18,9 +18,11 @@
         height: 300px;
     }
 }
+
 .classroom-container {
     width: 80%;
 }
+
 .classroom-for-students {
     .form-content {
         background-color: aliceblue;
@@ -80,9 +82,65 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
     white-space: pre-wrap;
+
     h4 {
         color: white;
         margin: 0;
         text-align: left;
     }
+}
+
+.room-description {
+    padding: 10px;
+
+    img {
+        height: 200px;
+        width: 400px;
+    }
+
+    &-content {
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    }
+
+    &-assignment {
+        display: flex;
+        align-items: center;
+
+        img {
+            width: 400px;
+            height: 400px;
+        }
+
+        button {
+            width: max-content;
+        }
+    }
+}
+
+.guZdik {
+
+    max-width: 100% !important;
+    height: 100px !important;
+    flex-direction: column !important;
+
+    svg {
+        height: 50px !important;
+    }
+}
+
+.file-items {
+    padding-left: 5%;
+    margin-top: 4%;
+    &-container {
+        width: 90%;
+        svg {
+            float: right;
+        }
+    }
+}
+.block-button {
+    width: 100%!important; 
 }

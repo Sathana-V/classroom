@@ -15,7 +15,7 @@ const corsOptions ={
 app.use(cors(corsOptions));
   
 app.use("/auth", userRouter)
-app.use("/receipe",taskRouter)
+app.use("/task",taskRouter)
 app.use("/class", classRouter)
 mongoose.connect("mongodb+srv://sathanavenkatesan02:Sathana123@recepies.qnla2aj.mongodb.net/?retryWrites=true&w=majority")
 app.listen(3004, () => {
